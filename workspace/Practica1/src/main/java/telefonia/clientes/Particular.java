@@ -1,11 +1,11 @@
-package telefonia;
+package telefonia.clientes;
 
 /**
  * Created by al341805 on 21/02/17.
  */
-public class ClienteParticular extends Cliente {
+public class Particular extends ClienteEmpresa {
     private String apellidos;
-    public ClienteParticular(String apellidos){
+    public Particular(String apellidos){
         super();
         this.apellidos = apellidos;
     }
