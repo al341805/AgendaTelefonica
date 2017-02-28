@@ -1,12 +1,32 @@
 package telefonia;
 
-public class Factura extends Tarifa {
-    private int codigoFactura;
+import telefonia.clientes.Cliente;
 
-    public Factura(int codigoFactura){
+import java.time.LocalDateTime;
+
+public class Factura{
+    private int codigoFactura;
+    private Cliente cliente;
+    private LocalDateTime fechaEmision;
+    private LocalDateTime inicioFacturacion;
+    private LocalDateTime finFacturacion;
+    private float costeTotal;
+
+    public Factura(int codigoFactura, Cliente cliente){
         this.codigoFactura = codigoFactura;
+        this.cliente = cliente;
+        this.fechaEmision = LocalDateTime.now();
     }
+
     public int getCodigoFactura() {
         return codigoFactura;
+    }
+
+    public float calculaCoste(){
+        return 0; //por implementar
+    }
+
+    public LocalDateTime getFechaEmision(){
+        return fechaEmision;
     }
 }

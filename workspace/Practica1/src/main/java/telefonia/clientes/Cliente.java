@@ -3,7 +3,7 @@ package telefonia.clientes;
 import telefonia.Factura;
 import telefonia.Llamada;
 import telefonia.Tarifa;
-
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class Cliente{
@@ -11,6 +11,11 @@ public class Cliente{
     private Tarifa tarifaContratada;
     private HashMap<Integer, Llamada> registroLlamadas;
     private HashMap<Integer, Factura> registroFacturas;
+    private LocalDateTime fechaAlta;
+
+    public Cliente(){
+        fechaAlta = LocalDateTime.now();
+    }
 
     public void withDatos(DatosCliente datosCliente){this.datosCliente = datosCliente;}
     public void withTarifa(Tarifa tarifa){this.tarifaContratada = tarifa;}
@@ -38,5 +43,9 @@ public class Cliente{
         } catch(Exception e){
             return false;
         }
+    }
+
+    public LocalDateTime getFecha(){
+        return fechaAlta;
     }
 }
